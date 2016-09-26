@@ -1,1 +1,3 @@
 .ipynb_checkpoints/PupilMasks-checkpoint.ipynb
+*.xml
+*.iml
