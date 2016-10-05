@@ -1,3 +1,7 @@
 .ipynb_checkpoints/PupilMasks-checkpoint.ipynb
 *.xml
 *.iml
+Simulation_results/ForceSymmetry_50iter_N512.png
+Simulation_results/ForceSymmetry_50iter_N512_mask.png
+*.pyc
+.ipynb_checkpoints/MaskOptimization-checkpoint.ipynb
