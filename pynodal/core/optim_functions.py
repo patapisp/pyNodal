@@ -205,8 +205,7 @@ def modified_GS_amplitude(EP, optEPinit, OPT_REG_FP, max_its):
     init_amplitude = np.sum(np.sum(PSF * OPT_REG_FP) ** 2)
     amplitudes = []
     EPj = optEPinit
-    while count < max_its:
-        count += 1
+    for count in tqdm.tqdm(range(max_its)):
         PSFj = myfft2(EP * EPj)
         a = np.sum(np.sum(np.real(PSFj * OPT_REG_FP)) ** 2) / init_amplitude
         amplitudes.append(a)
@@ -216,7 +215,7 @@ def modified_GS_amplitude(EP, optEPinit, OPT_REG_FP, max_its):
         EPj = CEPj + (1 - EP)
 
     plt.semilogy(np.arange(len(amplitudes)), amplitudes, 'o')
-    return EPj, amplitudes[-1]
+    return EPj
 
 
 def modified_GS_phase(EP, optEPinit, OPT_REG_FP, max_its):
